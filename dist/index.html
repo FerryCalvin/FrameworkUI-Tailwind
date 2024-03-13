@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body class="bg-[url('/images/bg.jpg')] bg-[length:1920px_1080px] text-white tracking-wider">
+    <header class="sticky top-0 z-50">
+        <nav class="container flex justify-between items-center">
+            <div class="py-5 font-bold text-3xl">
+                <a href="#home">
+                    <span>STRAVEL</span>
+                </a>
+            </div>
+            <div>
+                <ul class="hidden lg:flex items-center space-x-6">
+                    <li><a href="#home" class="hover:text-teal-200 ease-in duration-200">Arrival</a></li>
+                    <li><a href="#destination" class="hover:text-teal-200 ease-in duration-200">Destination</a></li>
+                    <li><a href="#holov" class="hover:text-teal-200 ease-in duration-200">Holo-V</a></li>
+                </ul>
+            </div>
+
+            <!-- Mobile -->
+            <div id="hamburger" class="lg:hidden cursor-pointer z-50">
+                <i class="'fa-solid fa-bars"></i>
+            </div>
+
+            <div id="menu" class="hidden bg-gray-950 h-[100vh] absolute inset-0">
+                <ul class="h-full grid place-item-center py-20">
+                    <li><a id="hLink" href="#home" class="hover:text-teal-200 ease-in duration-200">Arrival</a></li>
+                    <li><a id="hLink" href="#destination" class="hover:text-teal-200 ease-in duration-200">Destination</a></li>
+                    <li><a id="hLink" href="#holov" class="hover:text-teal-200 ease-in duration-200">Holo-V</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="container pt-40">
+                <div class="flex flex-col items-center z-20 md:flex-row">
+                    <div class="text-center mb-12 md:text-left md:w-100 md:pr-10">
+                        <h1 class="title">STRAVEL</h1>
+                        <p class="leading-relaxed mb-10">Welcome to STRAVEL, where the future of travel transcends boundaries and reaches for the stars. As a pioneering company in the field of space travel, STRAVEL is at the forefront of revolutionizing interstellar journeys with cutting-edge technology and the utilization of Faster Than Light (FTL) Drive. At STRAVEL, we redefine the possibilities of exploration by offering a seamless and extraordinary space travel experience. Our commitment to innovation enables us to propel beyond conventional limitations, making the vastness of the cosmos accessible to those with a sense of adventure.</p>
+                        <button class="btn">Explore</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Mobile menu
+        const hamburger = document.querySelector('#hamburger');
+        const menu = document.querySelector('#menu');
+        const hLink = document.querySelectorAll('#hLink');
+        const faSolid = document.querySelector('.fa-solid');
+
+        hamburger.addEventListener("click", () => {
+            menu.classList.toggle('hidden');
+            faSolid.classList.toggle('fa-xmark');
+        });
+
+        hlink.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                faSolid.classList.toggle('fa-xmark');
+            })
+        })
+    </script>
+</body>
+</html>
